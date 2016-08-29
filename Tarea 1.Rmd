@@ -1,0 +1,49 @@
+---
+title: "Calificaciones"
+author: "Jhonatan Rafael Leon Hernandez"
+date: "29 de agosto de 2016"
+output: pdf_document
+----
+
+###calificaciones
+
+##primer semestre
+
+ * Matematicas Básicas 5
+ * Problemas matemáticas Básicas 5
+ * Programación Actuarial 5
+ * DHPC 8
+ * Conceptos De Calculo 7
+ * Introducción a la Profesión Actuarial 5
+
+##segundo semestre
+
+ *Teoria del interes I 7
+ *Microeconomia 6
+ *Matematicas Basicas 6
+ *Problemas de matematicas Basicas 6
+ *Teoria de Ecuaciones 7
+ *FHS 5
+ 
+##Tercer semestre
+ 
+ *Programacion Actuarial I  10
+ *Teoria del Interes II 9
+ *Macroeconomia 8
+ *Calculo Diferencial 8
+ *Algebra Lineal 5
+ 
+##Cuarto semestre
+ *Contabilidad General 7
+ *Sistema Financiero Mexicano 8
+ *Introduccion a la Profesion Actuarial 9
+ *Calculo Integral 7
+ *Algebra Lineal 8
+ 
+##Quinto Semestre
+  *Programacion Acutarial II
+  *Calculo Diferencial en Varias Variables
+  *Ecuaciones Diferenciales
+  *Probabilidad I
+  *FHS
+
