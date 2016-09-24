@@ -1,5 +1,7 @@
 corr<- function(directorio="~/GitHub/Programacion_Actuarial_lll_OT16/caso1/specdata", horizonte=0){
+  setwd("C:/Users/Usuario/Documents/GitHub/Programacion_Actuarial_lll_OT16/caso1/specdata")
   vec <- vector("numeric",0)
+  
   contador<- 1
   for (i in 1:332){
     
@@ -25,6 +27,6 @@ corr<- function(directorio="~/GitHub/Programacion_Actuarial_lll_OT16/caso1/specd
    
 }
 
-corr(,20)
-corr(,0)
-corr(,117)
+corr("directorio",20)
+corr("directorio",0)
+corr("directorio",117)
