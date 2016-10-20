@@ -14,28 +14,43 @@ rankingcompleto<-function(resultado,num="mejor"){
     stop("enfermedades invalidas") 
     break}
   
-  for(i in 1:length(estados)) {
-    est <- datos[grep(estados[i], datos[,7]), ]
-    orden <- est[order(est[, columna], est[, 2], na.last = NA), ]
-    
-    nomhospital <- if(num == "mejor") {
-      orden[1, 2]
-    } else if(num == "peor") {
-      orden[nrow(empate), 2]
-    } else{
-      orden[num, 2]
-    }
   
-    vec<- append(vec, c(nomhospital, estados[i]))
+  if(num=="mejor"){
+    num<-1
   }
-    vec <- as.data.frame(matrix(vec, length(estados), 2, byrow = TRUE))
-    colnames(vec) <- c("hospital", "state")
-    rownames(vec) <- estados
-    
-    vec
-    
+  
+  separa <- split(datos,datos[,7])
+  if( is.numeric(num)==T){
+    for (i in 1:length(estados)) {
+      s <- separa[[i]]
+      s[,columna]<-suppressWarnings(as.numeric(s[,columna]))
+      cual <- order(s[,columna],s[,2])
+      hospitales <- s[cual,2]
+      regresar <- hospitales[num]
+      vec <- c(vec,regresar)
+    }
+  } else if(num=="peor") {
+    num <- 1
+    for (i in 1:length(estados)) {
+      s <- separa[[i]]
+      s[,columna]<-suppressWarnings(as.numeric(s[,columna]))
+      cual <- order(s[,columna],s[,2],decreasing = T)
+      hospitales <- s[cual,2]
+      regresar <- hospitales[num]
+      vec <- c(vec,regresar)
+    }
+  }
+  tabla <- data.frame(vec,names(separa))
+  names(tabla)<-c("hospital","state")
+  rownames(tabla) <- names(separa)
+  tabla
+  
 }
-
-head(rankingcompleto("ataque", 20), 10)
+rankingcompleto("ataque", 20)
 tail(rankingcompleto("neumonía", "peor"), 3)
 tail(rankingcompleto("falla"), 10) 
+
+#segunda
+#NJ ataque 5 kackettstown
+#stafford VA ataque 5
+#cleveland FL neumonia

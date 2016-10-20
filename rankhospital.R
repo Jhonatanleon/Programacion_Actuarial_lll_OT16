@@ -29,17 +29,20 @@ rankhospital<- function(estado, resultado, num= "mejor"){
   hospitall<-hospital[1,2]
   hospitall
   } else {
-    #s[num,2]
-    dead<- s[order(s[,columna]),]
-    hospital<-dead[order(dead$Hospital.Name , na.last = NA), ]
-    hospitall<-hospital[num,2]
-    hospitall
-
+    dead<- s[(s[,columna]),]
+    cual <- order(s[,columna],s[,2])
+    hospitales <- s[cual,2]
+    regresar <- hospitales[num]
+    regresar
   }
   
 }
-
-
+#mercy ks ataque 10
+#cleveland FL neumonia 7 
 rankhospital("MN", "ataque", 5000)
 rankhospital("TX", "falla", 4)
 rankhospital("MD", "ataque", "peor")
+rankhospital("FL", "neumonia", "7")
+rankhospital("KS", "ataque", "10")
+rankhospital("KS", "ataque", "mejor")
+rankhospital("KS", "falla", "12")
